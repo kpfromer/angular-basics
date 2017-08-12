@@ -24,5 +24,9 @@ img {
 
 :host {
     padding: 0em;
-    position: block;
+    display: block;
+}
+
+.actions {
+    padding: 1em 0;
 }

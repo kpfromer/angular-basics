@@ -3,3 +3,10 @@
     <img src="{{photo}}" alt="Entry Photo">
     <figcaption>{{description}}</figcaption>
 </figure>
+<button type="button" (click)="isLiked = !isLiked" [ngClass]="{liked: isLiked}" >❤</button>
+<button type="button" (click)="showComments = !showComments" >Comments: {{comments.length}}</button>
+<div class="comments" *ngIf="showComments">
+    <div class="comment" *ngFor="let comment of comments">
+        <p><strong>{{comment.name}}</strong> {{comment.comment}}</p>
+    </div>
+</div>
