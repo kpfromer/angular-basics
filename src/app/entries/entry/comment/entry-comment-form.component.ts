@@ -21,6 +21,9 @@ export class EntryCommentFormComponent {
     @ViewChild('commentForm') commentForm: NgForm;
 
     onSubmit() {
+
+        if(this.commentForm.invalid) return;
+
         let comment = {name: this.name, comment: this.comment};
 
         this.entryService.addComment(this.entryId, comment);
