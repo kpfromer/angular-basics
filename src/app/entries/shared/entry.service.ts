@@ -14,4 +14,9 @@ export class EntryService {
             .toPromise()
             .then(response => response.json().data as Entry[])
     }
+
+    addComment(entryId: number, comment: {name: string, comment: string}) {
+        return this.http.post(`/app/entries/${entryId}/comments`, comment)
+            .toPromise();
+    }
 }
