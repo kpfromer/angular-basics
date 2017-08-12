@@ -7,5 +7,7 @@ import {Component} from "@angular/core";
     styleUrls: ['entry.component.css']
 })
 export class EntryComponent {
-
+    title: string = 'My First Photo';
+    photo: string = 'http://placehold.it/800x500?text=Angular Basics';
+    description: string = 'A description of angular basics course';
 }
