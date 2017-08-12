@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpModule} from "@angular/http";
 
+// Services
+import {EntryService} from "./entries/shared/entry.service";
+
 // Components
 import { AppComponent } from "./app.component"
 import {EntryListComponent, EntryComponent} from "./entries/";
@@ -16,6 +19,9 @@ and do other things that may be repetitive without it
         BrowserModule,
         HttpModule
     ],// angular now knows that this app will be used with the web browser
+    providers : [
+        EntryService
+    ],// defines injectable services
     declarations: [
         AppComponent,
         EntryComponent,// Since EntryComponent is a child of the EntryListComponent WE PLACE IT BEFORE EntryListComponent in declarations, else we get an error
