@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpModule} from "@angular/http";
+import {InMemoryWebApiModule} from "angular-in-memory-web-api";
 
 // Services
 import {EntryService} from "./entries/shared/entry.service";
@@ -8,6 +9,7 @@ import {EntryService} from "./entries/shared/entry.service";
 // Components
 import { AppComponent } from "./app.component"
 import {EntryListComponent, EntryComponent} from "./entries/";
+import {InMemoryEntryService} from "./backend";
 
 /*
 This is a typescript decorator (provide Angular with metadata)
@@ -17,7 +19,8 @@ and do other things that may be repetitive without it
 @NgModule({
     imports: [
         BrowserModule,
-        HttpModule
+        HttpModule,
+        InMemoryWebApiModule.forRoot(InMemoryEntryService)// ONLY FOR DEVELOPMENT
     ],// angular now knows that this app will be used with the web browser
     providers : [
         EntryService
